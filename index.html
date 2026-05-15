@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortivashon – Stay Motivated Every Day | Terms & Privacy</title>
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/fire-element.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            color: #bf360c;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #e64a19, #ff5722);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            font-size: 3.5rem;
+            margin-right: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .developer-info {
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background-color: #fbe9e7;
+            border-bottom: 1px solid #ffab91;
+            overflow-x: auto;
+        }
+        
+        .tab-btn {
+            padding: 18px 30px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #bf360c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn:hover {
+            color: #870000;
+            background-color: rgba(255, 87, 34, 0.05);
+        }
+        
+        .tab-btn.active {
+            color: #870000;
+            border-bottom: 3px solid #e64a19;
+            background-color: white;
+        }
+        
+        .content {
+            padding: 40px;
+            min-height: 600px;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: #bf360c;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ffab91;
+        }
+        
+        h3 {
+            color: #e64a19;
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+        }
+        
+        h4 {
+            color: #f4511e;
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #4e342e;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            color: #4e342e;
+        }
+        
+        .highlight-box {
+            background-color: #fbe9e7;
+            border-left: 4px solid #e64a19;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #f57f17;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid #ffab91;
+        }
+        
+        .contact-card h3 {
+            color: #bf360c;
+            margin-top: 0;
+        }
+        
+        .email-link {
+            display: inline-block;
+            background-color: #e64a19;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .email-link:hover {
+            background-color: #bf360c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 54, 12, 0.3);
+        }
+        
+        .last-updated {
+            text-align: center;
+            padding: 20px;
+            color: #e64a19;
+            font-size: 0.95rem;
+            border-top: 1px solid #ffab91;
+            background-color: #fbe9e7;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .app-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .app-feature {
+            flex: 1;
+            min-width: 250px;
+            background-color: #fbe9e7;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #ffab91;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #e64a19;
+        }
+        
+        .app-feature h4 {
+            color: #bf360c;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #bf360c;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            border-top: 1px solid #ffab91;
+        }
+        
+        @media (max-width: 768px) {
+            .container { border-radius: 15px; }
+            header { padding: 30px 20px; }
+            h1 { font-size: 2.2rem; }
+            .nav-tabs { flex-wrap: wrap; }
+            .tab-btn { padding: 15px 20px; flex: 1; min-width: 140px; }
+            .content { padding: 30px 20px; }
+            h2 { font-size: 1.8rem; }
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #e64a19;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: none;
+        }
+        
+        .print-btn:hover { background-color: #bf360c; transform: scale(1.1); }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background-color: #f4511e;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 100;
+            border: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background-color: #bf360c; transform: scale(1.1); }
+        
+        strong { color: #bf360c; }
+        a { color: #e64a19; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">🔥</div>
+                <div>
+                    <h1>Mortivashon</h1>
+                    <div class="subtitle">Stay Fired Up · Goal Crusher · Daily Drive</div>
+                </div>
+            </div>
+            <div class="developer-info">
+                <strong>Developer:</strong> Lynn | <strong>Package:</strong> app.android.lynn.mortivashon | <strong>Support:</strong> console.openai.ai@gmail.com
+            </div>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="terms">Terms of Service</button>
+            <button class="tab-btn" data-tab="privacy">Privacy Policy</button>
+            <button class="tab-btn" data-tab="data">Data Safety</button>
+            <button class="tab-btn" data-tab="app">About Mortivashon</button>
+            <button class="tab-btn" data-tab="contact">Contact Us</button>
+        </div>
+        
+        <div class="content">
+            <!-- Terms of Service -->
+            <div id="terms" class="tab-content active">
+                <h2>Terms of Service</h2>
+                <div class="last-updated">Last Updated: May 15, 2026</div>
+                
+                <p><strong>These Terms of Service apply to the Mortivashon mobile application (package: app.android.lynn.mortivashon), published on Google Play by Lynn.</strong></p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By downloading, installing, or using Mortivashon ("App"), you agree to these Terms. If you do not agree, do not use the App.</p>
+                
+                <h3>2. Description of Service</h3>
+                <p>Mortivashon is a personal motivation and goal‑tracking assistant that ignites your ambition, tracks your progress, and celebrates your wins. Features include:</p>
+                <ul>
+                    <li>Daily motivational quotes and powerful reminders</li>
+                    <li>Goal setting with milestones and visual progress</li>
+                    <li>Habit streaks, consistency scores, and fire streaks</li>
+                    <li>Personalised dashboard with inspirational content</li>
+                    <li>Journaling prompts and gratitude exercises</li>
+                    <li>Community challenges and accountability groups (optional)</li>
+                </ul>
+                
+                <h3>3. Mental Wellbeing & Personal Growth Disclaimer</h3>
+                <div class="warning-box">
+                    <strong>🧠 Important Disclaimer:</strong>
+                    <ul>
+                        <li>Mortivashon is <strong>NOT</strong> a medical device and does not provide diagnosis, treatment, or professional mental health advice.</li>
+                        <li>Motivation and habit change are personal journeys; the App is a supportive tool, not a substitute for professional counselling or therapy.</li>
+                        <li>If you are experiencing severe stress, anxiety, or depression, please consult a qualified healthcare provider.</li>
+                        <li>In case of emergency or suicidal thoughts, contact your local emergency services or a crisis hotline immediately.</li>
+                    </ul>
+                </div>
+                
+                <h3>4. User Accounts and Data</h3>
+                <ul>
+                    <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+                    <li>Provide accurate information during registration (optional).</li>
+                    <li>You own all your motivation data: goals, journal entries, habit logs, and achievements.</li>
+                    <li>Data is stored locally and may be optionally backed up to secure cloud storage.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>💾 Backup Recommendation:</strong> Enable cloud sync to preserve your streaks and goals. Without sync, uninstalling the app may result in loss of your motivation history.
+                </div>
+                
+                <h3>5. Acceptable Use</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the App for any unlawful purpose or to harass others.</li>
+                    <li>Attempt to reverse engineer, decompile, or modify the App.</li>
+                    <li>Share account credentials or impersonate others.</li>
+                    <li>Upload content that is abusive, obscene, or violates rights of others.</li>
+                    <li>Use the App to provide professional advice (medical, financial, legal).</li>
+                </ul>
+                
+                <h3>6. Responsibility & Outcomes</h3>
+                <ul>
+                    <li>You acknowledge that motivation and goal achievement vary from person to person.</li>
+                    <li>Mortivashon provides suggestions and encouragement; individual results may differ.</li>
+                    <li>You assume full responsibility for decisions made based on App content.</li>
+                </ul>
+                
+                <h3>7. User-Generated Content</h3>
+                <ul>
+                    <li>You retain ownership of your journals, goals, and community posts.</li>
+                    <li>By using the App, you grant Mortivashon a limited license to store and display your content solely to provide the service.</li>
+                    <li>We reserve the right to remove content that violates these terms or is harmful to the community.</li>
+                </ul>
+                
+                <h3>8. Subscriptions & Payments</h3>
+                <ul>
+                    <li>Premium features (e.g., advanced analytics, unlimited goals, ad‑free) may require a subscription.</li>
+                    <li>Subscriptions auto‑renew unless canceled at least 24 hours before the renewal date.</li>
+                    <li>Refunds are subject to Google Play Store policies.</li>
+                </ul>
+                
+                <h3>9. Intellectual Property</h3>
+                <ul>
+                    <li>The App, including code, design, graphics, and original content, is owned by Lynn.</li>
+                    <li>Your personal data remains your property.</li>
+                    <li>You may not reproduce, distribute, or create derivative works from App content without permission.</li>
+                </ul>
+                
+                <h3>10. Third-Party Services</h3>
+                <p>The App may use third‑party services (e.g., analytics, cloud storage). Use of those services is subject to their respective terms.</p>
+                
+                <h3>11. Disclaimer of Warranties</h3>
+                <p>The App is provided "AS IS" without warranties of any kind. We do not guarantee that use of the App will result in specific motivation or goal outcomes.</p>
+                
+                <h3>12. Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, Lynn shall not be liable for any indirect, incidental, or consequential damages, including emotional distress, data loss, or personal dissatisfaction arising from use of the App.</p>
+                
+                <h3>13. Indemnification</h3>
+                <p>You agree to indemnify and hold harmless Lynn from any claims resulting from your misuse of the App or violation of these Terms.</p>
+                
+                <h3>14. Changes to Terms</h3>
+                <p>We may update these Terms periodically. Continued use after changes indicates acceptance.</p>
+                
+                <h3>15. Termination</h3>
+                <p>You may delete your account at any time. We may suspend or terminate accounts that violate these Terms.</p>
+                
+                <h3>16. Governing Law</h3>
+                <p>These Terms are governed by applicable laws without regard to conflict of law principles.</p>
+                
+                <h3>17. Contact</h3>
+                <p>For questions about these Terms: <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a></p>
+            </div>
+            
+            <!-- Privacy Policy -->
+            <div id="privacy" class="tab-content">
+                <h2>Privacy Policy</h2>
+                <div class="last-updated">Last Updated: May 15, 2026</div>
+                
+                <p><strong>This Privacy Policy applies to Mortivashon (package: app.android.lynn.mortivashon), developed by Lynn. For privacy matters, contact: console.openai.ai@gmail.com</strong></p>
+                
+                <h3>Developer & Contact Information</h3>
+                <ul>
+                    <li><strong>Developer Name:</strong> Lynn</li>
+                    <li><strong>App Package:</strong> app.android.lynn.mortivashon</li>
+                    <li><strong>Support Email:</strong> <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a></li>
+                    <li><strong>Privacy Inquiries:</strong> Use the same email (subject: Privacy Request)</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>🔒 Our Commitment:</strong> We respect your privacy and are transparent about data practices. We never sell your personal information.
+                </div>
+                
+                <h3>1. Information We Collect</h3>
+                <h4>1.1 Information You Provide</h4>
+                <ul>
+                    <li><strong>Account Info (optional):</strong> Name, email address (encrypted password).</li>
+                    <li><strong>Goal & Habit Data:</strong> Goals you set, tasks, deadlines, progress updates.</li>
+                    <li><strong>Motivation Logs:</strong> Mood, journal entries, favourite quotes, reflection notes.</li>
+                    <li><strong>Optional Profile:</strong> Interests, motivation style (to personalise content).</li>
+                </ul>
+                
+                <h4>1.2 Automatically Collected Information</h4>
+                <ul>
+                    <li><strong>Device Info:</strong> Model, OS version, unique identifiers.</li>
+                    <li><strong>Usage Data:</strong> Features accessed, time spent, crash logs.</li>
+                    <li><strong>Diagnostics:</strong> IP address (anonymized), performance data.</li>
+                </ul>
+                
+                <h4>1.3 Information from Third Parties</h4>
+                <ul>
+                    <li>If you sign in with Google, we receive basic profile info (name, email) with your permission.</li>
+                </ul>
+                
+                <h3>2. How We Use Your Information</h3>
+                <ul>
+                    <li><strong>Core Functionality:</strong> Track goals, streaks, and deliver motivational content.</li>
+                    <li><strong>Personalization:</strong> Tailored quotes, reminders, and suggestions based on your preferences.</li>
+                    <li><strong>Notifications:</strong> Goal reminders, daily inspiration (opt‑out anytime).</li>
+                    <li><strong>Analytics & Improvements:</strong> Understand usage to enhance features and stability.</li>
+                </ul>
+                
+                <h3>3. Data Sharing & Disclosure</h3>
+                <p><strong>We do not sell your personal data.</strong> Sharing occurs only:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> If you choose to share achievements or posts.</li>
+                    <li><strong>Service Providers:</strong> Trusted partners (e.g., Firebase) under strict confidentiality.</li>
+                    <li><strong>Legal Requirements:</strong> To comply with law or protect rights/safety.</li>
+                </ul>
+                
+                <h3>4. Data Security</h3>
+                <ul>
+                    <li>Data in transit is encrypted using TLS.</li>
+                    <li>Data at rest is stored on secure servers with access controls.</li>
+                    <li>Passwords are hashed and never stored in plain text.</li>
+                </ul>
+                
+                <h3>5. Data Retention</h3>
+                <ul>
+                    <li>Active accounts: Data retained until account deletion.</li>
+                    <li>Deleted accounts: Data permanently erased within 90 days.</li>
+                    <li>Anonymized analytics may be retained for trend analysis.</li>
+                </ul>
+                
+                <h3>6. Your Privacy Rights</h3>
+                <p>Depending on your jurisdiction (GDPR, CCPA, etc.), you may have rights to:</p>
+                <ul>
+                    <li>Access and receive a copy of your data.</li>
+                    <li>Correct inaccurate information.</li>
+                    <li>Request deletion of your account and data.</li>
+                    <li>Opt out of marketing communications.</li>
+                </ul>
+                <p>To exercise rights, email <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a> with "Privacy Request".</p>
+                
+                <h3>7. Children's Privacy</h3>
+                <p>Mortivashon is intended for users aged 16 and older. We do not knowingly collect data from children under 16 (or relevant age of consent).</p>
+                
+                <h3>8. International Data Transfers</h3>
+                <p>Your information may be processed in countries with different data protection laws. By using the App, you consent to such transfers.</p>
+                
+                <h3>9. Changes to This Policy</h3>
+                <p>We will notify you of material changes via in‑app notice or email. Continued use signifies acceptance.</p>
+                
+                <h3>10. Contact for Privacy</h3>
+                <div class="contact-card">
+                    <h4>📬 Privacy Questions?</h4>
+                    <p><strong>Email:</strong> <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a></p>
+                    <p>We aim to respond within 30 days.</p>
+                </div>
+            </div>
+
+            <!-- Data Safety -->
+            <div id="data" class="tab-content">
+                <h2>Data Safety Information</h2>
+                <div class="last-updated">Last Updated: May 15, 2026</div>
+                
+                <p><strong>Mortivashon complies with Google Play Data Safety requirements. Below is a transparent overview of data collection for this motivation app.</strong></p>
+                
+                <h3>Data Collection Summary</h3>
+                <div class="app-info">
+                    <div class="app-feature">
+                        <div class="feature-icon">🔥</div>
+                        <h4>Goal & Habit Data</h4>
+                        <ul>
+                            <li>Personal goals & deadlines</li>
+                            <li>Task completion status</li>
+                            <li>Streaks & consistency</li>
+                        </ul>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">📊</div>
+                        <h4>App Activity</h4>
+                        <ul>
+                            <li>Feature usage & screens visited</li>
+                            <li>Quote interactions</li>
+                            <li>Notification opens</li>
+                        </ul>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🔧</div>
+                        <h4>Device & Diagnostics</h4>
+                        <ul>
+                            <li>Crash logs & performance data</li>
+                            <li>Device model & OS version</li>
+                            <li>Anonymous usage statistics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Purpose of Data Collection</h3>
+                <ul>
+                    <li><strong>Core functionality:</strong> Track goals, habits, and motivation streaks.</li>
+                    <li><strong>Personalization:</strong> Offer relevant quotes and recommendations.</li>
+                    <li><strong>Analytics:</strong> Improve app reliability and user experience.</li>
+                    <li><strong>Communication:</strong> Send goal reminders and daily inspiration (optional).</li>
+                </ul>
+                
+                <h3>Data Sharing Practices</h3>
+                <div class="highlight-box">
+                    <strong>🚫 No sale of personal data.</strong> Data is shared only with service providers (e.g., Firebase) for analytics and cloud backup, under strict data protection agreements.
+                </div>
+                
+                <h3>Security Measures</h3>
+                <ul>
+                    <li>✅ Encryption in transit (TLS)</li>
+                    <li>✅ Encryption at rest on servers</li>
+                    <li>✅ No plain‑text storage of sensitive info</li>
+                    <li>✅ Regular security assessments</li>
+                </ul>
+                
+                <h3>User Controls</h3>
+                <ul>
+                    <li>✅ Delete account → data removal within 90 days</li>
+                    <li>✅ Export your goal data (CSV/PDF)</li>
+                    <li>✅ Opt out of analytics via settings</li>
+                    <li>✅ Manage notification preferences</li>
+                </ul>
+                
+                <h3>Data Retention & Deletion</h3>
+                <ul>
+                    <li>Active accounts: Data kept until deletion.</li>
+                    <li>Account deletion: Complete erasure within 90 days.</li>
+                    <li>Backups: Removed within 30 days.</li>
+                </ul>
+                
+                <h3>Age Restriction</h3>
+                <div class="warning-box">
+                    <strong>🔞 For users 16+ only.</strong> We do not knowingly collect information from individuals under 16. If you believe a minor's data has been collected, contact us immediately.
+                </div>
+                
+                <h3>Compliance</h3>
+                <ul>
+                    <li>✅ Google Play Data Safety</li>
+                    <li>✅ GDPR (EU)</li>
+                    <li>✅ CCPA (California)</li>
+                </ul>
+                
+                <p><strong>Questions about data safety?</strong> <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a></p>
+            </div>
+            
+            <!-- About Mortivashon -->
+            <div id="app" class="tab-content">
+                <h2>About Mortivashon – Stay Fired Up</h2>
+                <p><strong>Mortivashon</strong> (package: app.android.lynn.mortivashon) is your personal spark to crush goals, build unstoppable habits, and wake up driven every day. Whether you're chasing a big dream or building small daily wins, Mortivashon keeps your fire burning.</p>
+                
+                <div class="app-info">
+                    <div class="app-feature">
+                        <div class="feature-icon">💡</div>
+                        <h4>Daily Ignition</h4>
+                        <p>Curated motivational quotes, success stories, and powerful prompts.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🎯</div>
+                        <h4>Goal Setting</h4>
+                        <p>Set SMART goals with milestones, deadlines, and visual progress bars.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">🔥</div>
+                        <h4>Fire Streaks</h4>
+                        <p>Build unstoppable habits – keep your streak alive and earn badges.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">📓</div>
+                        <h4>Reflection Journal</h4>
+                        <p>Capture wins, lessons, and daily gratitude to stay on track.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">⏰</div>
+                        <h4>Custom Reminders</h4>
+                        <p>Never miss a goal review or your daily dose of motivation.</p>
+                    </div>
+                    <div class="app-feature">
+                        <div class="feature-icon">☁️</div>
+                        <h4>Cloud Sync</h4>
+                        <p>Optional backup to keep your motivation journey safe across devices.</p>
+                    </div>
+                </div>
+                
+                <h3>Why Mortivashon?</h3>
+                <ul>
+                    <li><strong>Built on positive psychology:</strong> Proven techniques to boost drive and resilience.</li>
+                    <li><strong>Privacy by design:</strong> Your goals and reflections stay private.</li>
+                    <li><strong>Clean, energetic interface:</strong> Focus on what fires you up.</li>
+                    <li><strong>Works offline:</strong> Core motivation tools available anytime, anywhere.</li>
+                </ul>
+                
+                <h3>Who is Mortivashon for?</h3>
+                <ul>
+                    <li>Anyone seeking daily motivation and focus.</li>
+                    <li>Goal setters, habit builders, and dream chasers.</li>
+                    <li>People looking for a positive, private space to grow.</li>
+                </ul>
+                
+                <h3>Platform & Availability</h3>
+                <div class="highlight-box">
+                    <p><strong>Platform:</strong> Android (Google Play Store)</p>
+                    <p><strong>Package Name:</strong> app.android.lynn.mortivashon</p>
+                    <p><strong>Min. OS:</strong> Android 7.0+</p>
+                    <p><strong>Languages:</strong> English (more coming soon)</p>
+                </div>
+            </div>
+            
+            <!-- Contact -->
+            <div id="contact" class="tab-content">
+                <h2>Contact the Mortivashon Team</h2>
+                
+                <div class="contact-card">
+                    <h3>🔥 Lynn – Developer</h3>
+                    <p>Creating tools to ignite your potential and keep you fired up.</p>
+                    
+                    <div style="margin: 25px 0;">
+                        <h4>📧 General Support & Feedback:</h4>
+                        <a href="mailto:console.openai.ai@gmail.com" class="email-link">console.openai.ai@gmail.com</a>
+                        <h4 style="margin-top: 20px;">🔐 Privacy & Data Requests:</h4>
+                        <a href="mailto:console.openai.ai@gmail.com" class="email-link" style="background-color:#bf360c;">console.openai.ai@gmail.com</a>
+                    </div>
+                    <p>We read every message. Your feedback helps Mortivashon grow.</p>
+                </div>
+                
+                <h3>📌 Tips for Faster Support</h3>
+                <ul>
+                    <li><strong>Subject line:</strong> [Bug] / [Feature] / [Privacy] / [Account]</li>
+                    <li><strong>Device model & Android version</strong></li>
+                    <li><strong>App version:</strong> (found in Settings → About)</li>
+                    <li><strong>Steps to reproduce (if bug)</strong></li>
+                    <li><strong>Screenshots (optional)</strong></li>
+                </ul>
+                
+                <h3>Common Topics</h3>
+                <ul>
+                    <li><strong>Bug reports:</strong> Crashes, sync issues, incorrect streaks.</li>
+                    <li><strong>Feature requests:</strong> New widgets, additional goal types, community features.</li>
+                    <li><strong>Account deletion:</strong> Send request from registered email.</li>
+                    <li><strong>Subscription help:</strong> Managed through Google Play; we can guide you.</li>
+                </ul>
+                
+                <h3>⏱️ Response Times</h3>
+                <ul>
+                    <li>Critical bugs: 24–48 hours</li>
+                    <li>General inquiries: 2–4 business days</li>
+                    <li>Privacy requests: within 30 days (GDPR/CCPA)</li>
+                </ul>
+                
+                <div class="warning-box">
+                    <strong>⚠️ IMPORTANT:</strong> Mortivashon is not a crisis or mental health service. If you are in distress or having suicidal thoughts, please contact a healthcare professional or emergency services immediately.
+                </div>
+                
+                <h3>Business & Media</h3>
+                <p>For partnerships or press inquiries: <a href="mailto:console.openai.ai@gmail.com">console.openai.ai@gmail.com</a> (Subject: Business Inquiry).</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Lynn. All rights reserved.</p>
+            <p>Mortivashon (app.android.lynn.mortivashon) – Motivation & Goals App on Google Play. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #e64a19;">
+                <strong>Disclaimer:</strong> Mortivashon is a self‑improvement tool and not a substitute for professional advice, diagnosis, or treatment. Always consult a qualified professional for personal, medical, or mental health concerns.
+            </p>
+        </footer>
+    </div>
+    
+    <button class="print-btn" aria-label="Print this page" title="Print this page">🖨️</button>
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+    
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, null, `#${tabId}`);
+            });
+        });
+        
+        document.querySelector('.print-btn').addEventListener('click', () => window.print());
+        const backBtn = document.querySelector('.back-to-top');
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backBtn.classList.add('show');
+            else backBtn.classList.remove('show');
+        });
+        
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (['terms','privacy','data','app','contact'].includes(hash)) {
+                document.querySelector(`[data-tab="${hash}"]`)?.click();
+            }
+        });
+        
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.substring(1) || 'terms';
+            const btn = document.querySelector(`[data-tab="${hash}"]`);
+            if (btn) btn.click();
+        });
+        
+        window.addEventListener('beforeprint', () => {
+            document.querySelector('.print-btn').style.display = 'none';
+            document.querySelector('.back-to-top').style.display = 'none';
+        });
+        window.addEventListener('afterprint', () => {
+            document.querySelector('.print-btn').style.display = 'flex';
+            document.querySelector('.back-to-top').style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
